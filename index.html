@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>CatSlider - fullscreen example</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js" type="text/javascript" ></script>
+		<script src="js/catslider.js" type="text/javascript" ></script>
+		<link rel="stylesheet" type="text/css" href="css/catslider.css" />
+	</head>
+	<body>
+		<div id="CatSliderBorder" class="CatSliderBorder">
+			<div id="CatSliderSlides" class="CatSliderSlides">
+			</div>
+		</div>
+		<script>
+			//so easy to create your CatSlider! It justs accepts an array of image url's!
+			var Cat = new CatSlider([
+				"http://jakesiegers.com/stuff/cats/Desktop%20Background.bmp"
+				,"http://jakesiegers.com/stuff/cats/catpicturess+%2816%29.jpg"
+				,"http://jakesiegers.com/stuff/cats/catpicturess+%2814%29.jpg"
+				,"http://jakesiegers.com/stuff/cats/1.jpg"
+				,"http://jakesiegers.com/stuff/cats/2.jpg"
+				,"http://jakesiegers.com/stuff/cats/3.jpg"
+				,"http://jakesiegers.com/stuff/cats/4.jpg"
+				,"http://jakesiegers.com/stuff/cats/5.jpg"
+				,"http://jakesiegers.com/stuff/cats/6.jpg"
+				,"http://jakesiegers.com/stuff/cats/7.jpg"
+				,"http://jakesiegers.com/stuff/cats/8.jpg"
+				,"http://jakesiegers.com/stuff/cats/9.jpg"
+				,"http://jakesiegers.com/stuff/cats/10.jpg"
+				,"http://jakesiegers.com/stuff/cats/going%20up.png"
+			]);
+			
+			/*
+				You can add this to adjust the slides on window resize - careful, it's still under works,
+				and right now there's a bit of a delay, but it will re-adjust all the sizes properly.
+			*/
+			window.onresize = function(event) {
+				Cat.updateWindowSize();
+				Cat.updateSlideSizes();
+			}
+		</script>
+	</body>
+</html>
