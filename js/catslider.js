@@ -12,7 +12,7 @@
 *
 * ------------------------------------------------
 * author: Jake Siegers
-* version: 0.1 
+* version: 0.1.1 
 * source: https://github.com/JakeSiegers/CatSlider
 */
 
@@ -46,7 +46,9 @@ var CatSlider = new Class({
 	,startPeriodicals: function(){
 		//Start the periodicals that change slide and keep track of image loading
 		this.checkLoadPer=this.checkLoad.periodical(2000,this);
-		this.nextSlidePer=this.nextSlide.periodical(5000,this);
+		if(this.slidesLength>1){		
+			this.nextSlidePer=this.nextSlide.periodical(5000,this);
+		}
 	}
 	,stopPeriodicals: function(){
 		//Stops the periodicals
